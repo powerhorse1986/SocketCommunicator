@@ -9,9 +9,9 @@ import socket
 import subprocess
 
 # Standard loopback interface address (localhost)
-HOST = "172.20.1.47"
+HOST = "0.0.0.0"
 # Port to listen on
-PORT = 65432
+PORT = 9898
 
 with socket.socket(socket.AF_INET, socket.SOCK_STREAM) as s:
     """
