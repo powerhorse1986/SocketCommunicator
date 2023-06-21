@@ -33,7 +33,7 @@ class Client:
         msg : list
             A list contains the messages
         """
-        self.messages.append(msg)
+        self.messages.extend(msg)
 
 
     def start_connection(self, host, port, num_conns) -> None:
@@ -45,7 +45,8 @@ class Client:
             The name of the host or the IP address of the host
         port : int
             The port number to which the server be connected
-        num_conns : int        Number of connections created
+        num_conns : int        
+            Number of connections created
         """
         
         server_addr = (host, port)
@@ -103,6 +104,7 @@ class Client:
             # If the data.outb is empty, we pop out the contents in data.message
             if not data.outb and data.messages:
                 data.outb = data.messages.pop(0)
+                print(f"Loading {data.outb!r}")
             
             # If the data.outb is not empty, we send it out and trim off the buffer
             if data.outb:
@@ -113,7 +115,7 @@ class Client:
     def main(self):
         # The server's hostname or IP address
         # HOST = input("Type in the IP address of the server")
-        HOST = ""
+        HOST = "144.30.235.158"
 
         # The port used by the server
         PORT = 9898
@@ -139,6 +141,3 @@ class Client:
 if __name__ == "__main__":
     client = Client()
     client.main()
-
-
-        

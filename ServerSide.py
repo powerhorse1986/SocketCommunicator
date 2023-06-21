@@ -5,7 +5,6 @@
 This script will be put on the server side to receive the signal or
 file sent by the client side which is put on local machine
 """
-import os
 import socket
 import selectors
 import types
